@@ -24,8 +24,21 @@ const create = async (name) => {
   return { id: results.insertId, name };
 };
 
+const updateProductId = async (id, name) => {
+  const e = await getProductsById(id);
+
+  if (e.length === 0) return { type: 404, message: 'Product not found' };
+  
+    await connection.execute(
+    'UPDATE StoreManager.products SET name = ? WHERE id = ?',
+    [name, id],
+  );
+  return { id, name };
+};
+
 module.exports = {
   getProducts,
   getProductsById,
   create,
+  updateProductId,
 };
