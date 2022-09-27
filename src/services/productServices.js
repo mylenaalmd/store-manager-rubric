@@ -1,6 +1,11 @@
 const validations = require('../middlewares/validations');
 const productsModels = require('../models/productsModels');
 
+const searchProduct = async (name) => {
+  const result = await productsModels.searchProduct(name);
+  return result;
+};
+
 const getProducts = async () => {
   const result = await productsModels.getProducts();
   return result;
@@ -32,9 +37,16 @@ const updateProductId = async (id, name) => {
   return result;
 };
 
+const deleteProduct = async (id) => {
+  const result = await productsModels.deleteProduct(id);
+  return result[0];
+};
+
 module.exports = {
   create,
   getProducts,
   getProductsById,
   updateProductId,
+  deleteProduct,
+  searchProduct,
 };

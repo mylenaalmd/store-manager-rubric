@@ -3,28 +3,95 @@
     "_id": "7d80fe82-146c-4303-a815-63ff4bbc8e5f",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:3000/products",
+    "name": "/products",
     "url": "http://localhost:3000/products",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-14T19:18:47.485Z",
-    "modified": "2022-09-21T20:40:03.836Z",
+    "modified": "2022-09-26T14:29:31.780Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"id\": 1,\n    \"name\": \"Martelo de Thor\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Traje de encolhimento\"\n  }\n]",
+      "form": []
+    },
     "tests": []
   },
   {
     "_id": "6c9f937c-dedc-4a39-84fa-d298323b2668",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:3000/products/1",
+    "name": "/products/1",
     "url": "http://localhost:3000/products/1",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-14T20:34:58.889Z",
-    "modified": "2022-09-14T20:34:58.985Z",
+    "modified": "2022-09-23T18:58:56.015Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": 1,\n  \"name\": \"Martelo de Thor\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "08850632-b23c-4c51-9425-decae0e526f3",
+    "colId": "history",
+    "containerId": "",
+    "name": "/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-23T19:11:04.682Z",
+    "modified": "2022-09-26T20:17:58.479Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "  {\n    \"id\": 3,\n    \"itemsSold\": [\n      {\n        \"productId\": 1,\n        \"quantity\": 1\n      },\n      {\n        \"productId\": 2,\n        \"quantity\": 5\n      }\n    ]\n  }",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "48e532ea-4883-41bd-83ae-926e08e59c97",
+    "colId": "history",
+    "containerId": "",
+    "name": "/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-09-26T14:29:01.203Z",
+    "modified": "2022-09-27T17:50:39.626Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": " {\n    \"id\": 3,\n    \"itemsSold\": [\n      {\n        \"productId\": 1,\n        \"quantity\": 1\n      },\n      {\n        \"productId\": 2,\n        \"quantity\": 5\n      }\n    ]\n  }",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a9e41e8b-ce8c-4219-b40a-896df4574f76",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/1",
+    "url": "http://localhost:3000/sales/1",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-09-26T15:30:44.440Z",
+    "modified": "2022-09-26T15:31:14.291Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": " {\n    \"id\": 3,\n    \"itemsSold\": [\n      {\n        \"productId\": 1,\n        \"quantity\": 1\n      },\n      {\n        \"productId\": 2,\n        \"quantity\": 5\n      }\n    ]\n  }",
+      "form": []
+    },
     "tests": []
   }
 ]

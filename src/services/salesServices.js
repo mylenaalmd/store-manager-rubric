@@ -1,6 +1,16 @@
 const salesModels = require('../models/salesModels');
 const validations = require('../middlewares/validations');
 
+const addSale = async (body) => {
+  const error = validations.validadeSale(body);
+  if (error.type) return error;
+
+  const result = await salesModels.addSale(body);
+  if (result.type) return result;
+
+  return { id: result, itemsSold: body };
+};
+
 const getSales = async () => {
   const result = await salesModels.getSales();
   return result;
@@ -11,19 +21,8 @@ const getSalesById = async (id) => {
   return result[0];
 };
 
-const create = async (name) => {
-  const valid = validations.validadeSale(name);
-
-  if (valid.type) {
-    return valid;
-  }
-
-  const result = await salesModels.create(name);
-  return result;
-};
-
 module.exports = {
   getSales,
   getSalesById, 
-  create,
+  addSale,
 };

@@ -1,5 +1,13 @@
 const connection = require('./connection');
 
+const searchProduct = async (name) => {
+  const [results] = await connection.execute(
+  'SELECT * FROM StoreManager.products WHERE name = ?',
+    [name],
+  );
+  return results;
+};
+
 const getProducts = async () => {
   const [results] = await connection.execute(
     'SELECT * FROM StoreManager.products ORDER BY id ASC',
@@ -36,9 +44,24 @@ const updateProductId = async (id, name) => {
   return { id, name };
 };
 
+const deleteProduct = async (id) => {
+  const exist = await getProductsById(id);
+
+  if (exist.lenght === 0) return { type: 204, message: 'Product not found' };
+
+  await connection.execute(
+    'DELETE FROM StoreManager.products WHERE id = ?',
+    [id],
+  );
+  
+  return { type: null };
+};
+
 module.exports = {
   getProducts,
   getProductsById,
   create,
   updateProductId,
+  deleteProduct,
+  searchProduct,
 };
