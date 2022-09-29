@@ -1,13 +1,13 @@
 const validations = require('../middlewares/validations');
 const productsModels = require('../models/productsModels');
 
-const searchProduct = async (q) => {
-  const result = await productsModels.searchProduct(q);
+const getProducts = async () => {
+  const [result] = await productsModels.getProducts();
   return result;
 };
 
-const getProducts = async () => {
-  const result = await productsModels.getProducts();
+const searchProduct = async (q) => {
+  const result = await productsModels.searchProduct(q);
   return result;
 };
 

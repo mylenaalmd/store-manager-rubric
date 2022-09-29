@@ -1,19 +1,20 @@
 const connection = require('./connection');
 
+const getProducts = async () => {
+  const [results] = await connection.execute(
+    'SELECT * FROM StoreManager.products ORDER BY id ASC',
+  );
+  // console.log(results);
+  return [results];
+};
+
 const searchProduct = async (q) => {
   const [results] = await connection.execute(
   'SELECT * FROM StoreManager.products WHERE name = ?',
     [q],
   );
-  console.log(results);
+  // console.log(results);
   return results;
-};
-
-const getProducts = async () => {
-  const [results] = await connection.execute(
-    'SELECT * FROM StoreManager.products ORDER BY id ASC',
-  );
-  return [results];
 };
 
 const getProductsById = async (id) => {

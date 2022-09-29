@@ -1,5 +1,10 @@
 const productServices = require('../services/productServices');
 
+const getProducts = async (_req, res) => {
+  const result = await productServices.getProducts();
+  res.status(200).json(result);
+};
+
 const searchProduct = async (req, res) => {
   const { q } = req.query;
   const result = await productServices.searchProduct(q);
@@ -12,11 +17,6 @@ const searchProduct = async (req, res) => {
   if (!filterResults) return res.status(200).json([]);
 
   res.status(200).json(filterResults);
-};
-
-const getProducts = async (_req, res) => {
-  const result = await productServices.getProducts();
-  res.status(200).json(result);
 };
 
 const getProductsById = async (req, res) => {
