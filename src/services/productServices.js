@@ -32,7 +32,7 @@ const updateProductId = async (id, name) => {
 
   if (valid.type) return valid;
 
-  const result = await productsModels.updateProduct(id, name);
+  const result = await productsModels.updateProductId(id, name);
 
   return result;
 };

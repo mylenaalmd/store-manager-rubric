@@ -93,5 +93,19 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "1786c4f3-ffaf-4990-959c-3dae33d357c9",
+    "colId": "history",
+    "containerId": "",
+    "name": "products/1",
+    "url": "http://localhost:3000/products/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-09-29T16:41:26.802Z",
+    "modified": "2022-09-29T16:41:26.822Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
