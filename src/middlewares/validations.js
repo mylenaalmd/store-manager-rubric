@@ -38,9 +38,10 @@ const validadeSale = (array) => {
 };
 
 const validadeProduct = async (body) => {
-  const product = (await productsModel.getProducts()).map((item) => item.id);
+  const product = (await productsModel.getProducts())[0].map((item) => item.id);
   let valorInicial = {}; 
 
+console.log(product);
   body.forEach((item) => {
     if (!product.includes(item.productId)) {
       valorInicial = { type: 404, message: 'Product not found' };

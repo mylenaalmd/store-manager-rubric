@@ -1,12 +1,15 @@
 const productServices = require('../services/productServices');
 
 const searchProduct = async (req, res) => {
-  const { name } = req.body;
   const { q } = req.query;
-  const result = await productServices.searchProduct(name);
+  const result = await productServices.searchProduct(q);
   const filterResults = result.filter((item) => item.name.includes(q));
 
-  if (!q) return res.status(200).json(result);
+  if (!q) {
+    return res.status(200).json(result);
+  }
+  
+  if (!filterResults) return res.status(200).json([]);
 
   res.status(200).json(filterResults);
 };

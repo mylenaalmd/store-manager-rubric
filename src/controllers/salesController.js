@@ -3,16 +3,17 @@ const salesServices = require('../services/salesServices');
 
 const getSales = async (_req, res) => {
   const result = await salesServices.getSales();
+
   res.status(200).json(camelize(result));
+  // console.log(camelize(result));
 };
 
 const getSalesById = async (req, res) => {
   const { id } = req.params;
 
   const result = await salesServices.getSalesById(id);
-  console.log(result);
 
-  if (!result) return res.status(404).json({ message: 'Product not found' });
+  if (result.length === 0) return res.status(404).json({ message: 'Sale not found' });
 
   res.status(200).json(camelize(result));
 };
@@ -35,9 +36,21 @@ const deleteSale = async (req, res) => {
   res.status(204).json({ message: null });
 };
 
+const updateSale = async (req, res) => {
+  const { id } = req.params;
+  const boddy = req.body;
+
+  const result = await salesServices.updateSale(id, boddy);
+
+  if (result.type) return res.status(result.type).json({ message: result.message });
+
+  res.status(200).json({ salesId: id, itemUpdate: boddy });
+};
+
 module.exports = {
   getSales, 
   getSalesById,
   addSale,
   deleteSale,
+  updateSale,
 };

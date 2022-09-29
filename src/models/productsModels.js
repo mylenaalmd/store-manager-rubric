@@ -1,10 +1,11 @@
 const connection = require('./connection');
 
-const searchProduct = async (name) => {
+const searchProduct = async (q) => {
   const [results] = await connection.execute(
   'SELECT * FROM StoreManager.products WHERE name = ?',
-    [name],
+    [q],
   );
+  console.log(results);
   return results;
 };
 
@@ -12,7 +13,7 @@ const getProducts = async () => {
   const [results] = await connection.execute(
     'SELECT * FROM StoreManager.products ORDER BY id ASC',
   );
-  return results;
+  return [results];
 };
 
 const getProductsById = async (id) => {

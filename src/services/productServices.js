@@ -1,8 +1,8 @@
 const validations = require('../middlewares/validations');
 const productsModels = require('../models/productsModels');
 
-const searchProduct = async (name) => {
-  const result = await productsModels.searchProduct(name);
+const searchProduct = async (q) => {
+  const result = await productsModels.searchProduct(q);
   return result;
 };
 
