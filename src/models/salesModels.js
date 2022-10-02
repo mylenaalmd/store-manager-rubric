@@ -18,7 +18,7 @@ const getSalesById = async (id) => {
     WHERE sale_id = ?;`,
     [id],
   );
-    console.log(results, 'ModelId');
+    // console.log(results, 'ModelId');
   
   return results;
 };
@@ -62,14 +62,14 @@ const updateSale = async (id, body) => {
   const exist = await getSalesById(id);
   if (exist[0].length === 0) return { type: 404, message: 'Sale not found' };
 
-  body.forEach(async (cur) => {
-    await connection.execute(
+  await Promise.all(
+    body.map((cur) => connection.execute(
       `UPDATE StoreManager.sales_products
-      SET product_id =?, quantity = ?, 
+      SET product_id = ?, quantity = ? 
       WHERE sale_id = ? AND product_id = ?`,
       [cur.productId, cur.quantity, id, cur.productId],
-    );
-  });
+    )),
+  );
   
   return { type: null };
 };

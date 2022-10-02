@@ -131,7 +131,21 @@
     "method": "DELETE",
     "sortNum": 0,
     "created": "2022-10-02T20:32:35.693Z",
-    "modified": "2022-10-02T20:38:59.983Z",
+    "modified": "2022-10-02T20:42:09.868Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "403311fd-1879-4438-8cd6-3e04f5b52c2d",
+    "colId": "history",
+    "containerId": "",
+    "name": "sales/1",
+    "url": "http://localhost:3000/sales/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-10-02T20:42:50.112Z",
+    "modified": "2022-10-02T20:50:25.360Z",
     "headers": [],
     "params": [],
     "tests": []
