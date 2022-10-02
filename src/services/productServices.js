@@ -39,7 +39,8 @@ const updateProductId = async (id, name) => {
 
 const deleteProduct = async (id) => {
   const result = await productsModels.deleteProduct(id);
-  return result[0];
+  console.log(result, 'results service');
+  return result;
 };
 
 module.exports = {
