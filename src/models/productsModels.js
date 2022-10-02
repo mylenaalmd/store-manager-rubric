@@ -10,10 +10,10 @@ const getProducts = async () => {
 
 const searchProduct = async (q) => {
   const [results] = await connection.execute(
-  'SELECT * FROM StoreManager.products WHERE name = ?',
-    [q],
+    `SELECT * FROM StoreManager.products 
+    WHERE name LIKE '%${q}%' `,
   );
-  // console.log(results);
+  console.log(results, 'resultsModel');
   return results;
 };
 

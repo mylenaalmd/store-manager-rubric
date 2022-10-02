@@ -28,7 +28,8 @@ const deleteSale = async (id) => {
 };
 
 const updateSale = async (id, body) => {
-   const error = validations.validadeSale(body);
+  const error = validations.validadeSale(body);
+  
   if (error.type) return error;
 
   const result = await salesModels.updateSale(id, body);

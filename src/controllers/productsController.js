@@ -7,16 +7,18 @@ const getProducts = async (_req, res) => {
 
 const searchProduct = async (req, res) => {
   const { q } = req.query;
+  console.log(q, 'result');
   const result = await productServices.searchProduct(q);
-  const filterResults = result.filter((item) => item.name.includes(q));
 
-  if (!q) {
-    return res.status(200).json(result);
-  }
+  // const filterResults = result.filter((item) => item.name.includes(q));
+
+  // if (!q) {
+  //   return res.status(200).json(result);
+  // }
   
-  if (!filterResults) return res.status(200).json([]);
+  // if (!filterResults) return res.status(200).json([]);
 
-  res.status(200).json(filterResults);
+  res.status(200).json(result);
 };
 
 const getProductsById = async (req, res) => {
