@@ -22,7 +22,7 @@ const getProductsById = async (id) => {
     'SELECT * FROM StoreManager.products WHERE id = ?',
     [id],
   );
-  console.log(results, 'id');
+  // console.log(results, 'id');
   return results;
 };
 
@@ -49,7 +49,7 @@ const updateProductId = async (id, name) => {
 
 const deleteProduct = async (id) => {
   const exist = await getProductsById(id);
-  console.log(exist, 'exist');
+  // console.log(exist, 'exist');
 
   if (!exist[0]) return { type: 204, message: 'Product not found' };
 

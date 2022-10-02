@@ -53,7 +53,7 @@ const deleteProduct = async (req, res) => {
   const { id } = req.params;
 
   const results = await productServices.deleteProduct(id);
-  console.log(id, 'results');
+  // console.log(id, 'results');
 
   if (results.type) return res.status(404).json({ message: results.message });
   

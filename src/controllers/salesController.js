@@ -33,7 +33,7 @@ const deleteSale = async (req, res) => {
 
   if (results.type) return res.status(404).json({ message: results.message });
   
-  res.status(204).json({ message: null });
+  res.status(204).end();
 };
 
 const updateSale = async (req, res) => {

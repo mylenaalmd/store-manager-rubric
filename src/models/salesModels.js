@@ -17,7 +17,8 @@ const getSalesById = async (id) => {
     ON sales.id = sale_prod.sale_id
     WHERE sale_id = ?;`,
     [id],
-);
+  );
+    console.log(results, 'ModelId');
   
   return results;
 };
@@ -44,7 +45,7 @@ const addSale = async (body) => {
 const deleteSale = async (id) => {
   const exist = await getSalesById(id);
 
-  if (exist[0].lenght === 0) return { type: 204, message: 'Sale not found' };
+  if (!exist[0].length) return { type: 204, message: 'Sale not found' };
 
   await connection.execute(
     'DELETE FROM StoreManager.sales WHERE id = ?',
