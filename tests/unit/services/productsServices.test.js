@@ -32,4 +32,6 @@ describe('Teste da camada service/Product', () => {
 
     expect(result).to.be.deep.equal({id: 4, name: 'Velas aromatizantes'});
   });
+
+  afterEach(() => sinon.restore());
 })

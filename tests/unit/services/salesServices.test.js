@@ -32,4 +32,6 @@ describe('Teste da camada service/Sales', () => {
 
     expect(result).to.be.equal(mock.getSalesIdTest);
   });
+
+  afterEach(() => sinon.restore());
 })
