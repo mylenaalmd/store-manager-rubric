@@ -7,7 +7,7 @@ const getProducts = async (_req, res) => {
 
 const searchProduct = async (req, res) => {
   const { q } = req.query;
-  console.log(q, 'result');
+  // console.log(q, 'result');
   const result = await productServices.searchProduct(q);
 
   // const filterResults = result.filter((item) => item.name.includes(q));

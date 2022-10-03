@@ -8,12 +8,12 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-14T19:18:47.485Z",
-    "modified": "2022-09-29T16:32:09.658Z",
+    "modified": "2022-10-03T00:23:45.890Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"id\": 1,\n    \"name\": \"Martelo de Thor\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Traje de encolhimento\"\n  }\n]",
+      "raw": "{\n  \"id\": 4,\n  \"name\": \"Velas aromatizantes\"\n}",
       "form": []
     },
     "tests": []
@@ -46,7 +46,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-23T19:11:04.682Z",
-    "modified": "2022-09-26T20:17:58.479Z",
+    "modified": "2022-10-02T23:27:04.865Z",
     "headers": [],
     "params": [],
     "body": {
@@ -80,16 +80,16 @@
     "colId": "history",
     "containerId": "",
     "name": "sales/1",
-    "url": "http://localhost:3000/sales/1",
+    "url": "http://localhost:3000/sales",
     "method": "POST",
     "sortNum": 0,
     "created": "2022-09-26T15:30:44.440Z",
-    "modified": "2022-09-29T16:48:05.720Z",
+    "modified": "2022-10-02T22:53:45.892Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": " {\n    \"id\": 3,\n    \"itemsSold\": [\n      {\n        \"productId\": 1,\n        \"quantity\": 1\n      },\n      {\n        \"productId\": 2,\n        \"quantity\": 5\n      }\n    ]\n  }",
+      "raw": " [\n   {\n  \"productId\": 3,\n   \"quantity\": 1\n},\n {\n  \"productId\": 2,\n  \"quantity\": 5\n}\n]",
       "form": []
     },
     "tests": []
@@ -103,7 +103,7 @@
     "method": "PUT",
     "sortNum": 0,
     "created": "2022-09-29T16:41:26.802Z",
-    "modified": "2022-09-29T16:41:26.822Z",
+    "modified": "2022-10-03T00:08:37.109Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -159,9 +159,42 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-10-02T21:18:56.480Z",
-    "modified": "2022-10-02T21:52:54.136Z",
+    "modified": "2022-10-02T22:02:08.120Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "f84b01f0-8a7a-47ff-9c51-0623d718a27c",
+    "colId": "history",
+    "containerId": "",
+    "name": "sales/1",
+    "url": "http://localhost:3000/sales/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-02T22:44:51.051Z",
+    "modified": "2022-10-02T22:44:51.270Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "4ae8a7b7-a0ef-49ee-8705-a86a307280d4",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-10-03T00:23:52.141Z",
+    "modified": "2022-10-03T00:23:52.504Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": 4,\n  \"name\": \"Velas aromatizantes\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
