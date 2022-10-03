@@ -28,10 +28,10 @@ describe('Testes da camada models/Sales', () => {
   });
 
   it('Testa retorno das vendas quando a adição da certo', async () => {
-    sinon.stub(productsModels, 'getProduct').resolves([1, 2, 3]);
+    sinon.stub(productsModels, 'getProducts').resolves([1, 2, 3]);
     sinon.stub(connection, 'execute').resolves([{ insertId: 5 }]);
 
-    const result = await salesModels.addSales([mock.addSaleTest]);
+    const result = await salesModels.addSale([mock.addSaleTest]);
 
     expect(result).to.be.equal(5);
   });

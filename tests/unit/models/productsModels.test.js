@@ -11,7 +11,7 @@ describe('Testes da camada models/Products', () => {
 
     const result = await productsModels.getProducts();
 
-    expect(result).to.be.deep.equal(mock.getProductsTest);
+    expect(result).to.be.deep.equal([mock.getProductsTest]);
 
   });
 

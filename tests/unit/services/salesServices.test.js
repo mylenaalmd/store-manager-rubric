@@ -30,6 +30,6 @@ describe('Teste da camada service/Sales', () => {
 
     const result = await salesService.getSalesById(1);
 
-    expect(result).to.be.equal([mock.getSalesIdTest]);
+    expect(result).to.be.equal(mock.getSalesIdTest);
   });
 })
