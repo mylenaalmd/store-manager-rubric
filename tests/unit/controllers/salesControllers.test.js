@@ -70,18 +70,18 @@ describe('Testes da camada Controller/Sales', () => {
     expect(res.json).to.have.been.calledWith(camelize(mock.getSalesIdTest));
   });
 
-  // it('Testa a função deleteSale quando da certo', async () => {
-  //   sinon.stub(salesService, 'deleteSale').resolves({ type: null });
+  it('Testa a função deleteSale quando da certo', async () => {
+    sinon.stub(salesService, 'deleteSale').resolves({ type: null });
 
-  //   const req = { params: { id: 1}};
-  //   const res = {};
+    const req = { params: { id: 1}};
+    const res = {};
 
-  //   res.sendStatus = sinon.stub().returns(res);
+    res.sendStatus = sinon.stub().returns(res);
 
-  //   await salesController.deleteSale(req, res);
+    await salesController.deleteSale(req, res);
 
-  //   expect(res.sendStatus).to.have.been.calledWith(204);
-  // });
+    expect(res.sendStatus).to.have.been.calledWith(204);
+  });
 
   afterEach(() => sinon.restore());
 })

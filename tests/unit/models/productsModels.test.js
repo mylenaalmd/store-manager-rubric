@@ -15,13 +15,13 @@ describe('Testes da camada models/Products', () => {
 
   });
 
-  // it('Testa o retorno dos produtos por ID', async () => {
-  //   sinon.stub(connection, 'execute').resolves([mock.getProductsTest[0]]);
+  it('Testa o retorno dos produtos por ID', async () => {
+    sinon.stub(connection, 'execute').resolves([mock.getProductsTest[0]]);
 
-  //   const result = await productsModels.getProductsById(1);
+    const result = await productsModels.getProductsById(1);
 
-  //   expect(result).to.be.deep.equal([mock.getSalesIdTest[0]]);
-  // });
+    expect(result).to.be.deep.equal(mock.getProductsTest[0]);
+  });
 
   it('Testa retorno da adição de um novo produtos quando da certo', async () => {
     sinon.stub(connection, 'execute').resolves([{ insertId: 5 }]);
